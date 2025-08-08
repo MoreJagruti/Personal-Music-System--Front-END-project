@@ -72,27 +72,51 @@ const songs = [
     }
 ];
 
-const artistImages = {
-    1: "image/legion.jpg",
-    2: "image/default.jpg", // unknown
-    3: "image/lowkey_pesci.jpg",
-    4: "https://upload.wikimedia.org/wikipedia/commons/6/60/Rich_The_Kid_2019.jpg",
-    5: "image/placeholder.jpg",
-    6: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Sleeping_At_Last.jpg",
-    7: "image/default.jpg",
-    8: "https://upload.wikimedia.org/wikipedia/en/7/79/Daft_Punk_-_Random_Access_Memories.png",
-    9: "image/clay.jpg",
-    10: "image/default.jpg",
-    11: "image/sudarshan_beatz.jpg",
-    12: "image/default.jpg",
-    13: "image/om_namaste.jpg"
-};
-
 
 // Set song posters and names dynamically
 Array.from(document.getElementsByClassName('songItem')).forEach((e, i) => {
     e.getElementsByTagName('img')[0].src = songs[i].poster;
     e.getElementsByTagName('h5')[0].innerHTML = songs[i].songName;
+});
+
+let search_results= document.getElementsByClassName('search_results')[0];
+songs.forEach((element) => {
+    const{id,songName,poster} = element;
+    // console.log(id);
+    let card = document.createElement('a');
+    card.classList.add('card');
+    card.href = "#"+id;
+    card.innerHTML = 
+    `<img src="${poster}" alt="">
+     <div class="content">
+         ${songName}
+         <div class="subTitle">Song ID: ${id}</div>
+     </div>`;
+     search_results.appendChild(card);                                   
+});
+
+let input = document.getElementsByTagName('input')[0];
+
+input.addEventListener('keyup', () => {
+    let input_value = input.value.toUpperCase();
+    let items = search_results.getElementsByTagName('a');
+    for(let index= 0;index< items.length; index++){
+        let as = items[index].getElementsByClassName('content')[0];
+        let text_value = as.textContent||as.innerHTML;
+        if(text_value.toUpperCase().indexOf(input_value) > -1){
+            items[index].style.display = "flex";
+        
+        }else{                     
+            items[index].style.display = "none";
+        }
+
+        if(input_value === 0){
+        
+        search_results.style.display = "none";
+        }else{
+            search_results.style.display = "";
+        }
+    }
 });
 
 let masterPlay = document.getElementById('masterPlay');

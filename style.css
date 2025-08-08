@@ -461,12 +461,45 @@ header .song-side nav .search .search_results{
     position: absolute;
     width: 100%;
     height: 200px;
-    background: #fff;
+    /* border: 1px solid #fff; */
     margin-top: 10px;
     border-radius: 10px;
+    overflow: auto;
+}
+header .song-side nav .search .search_results::-webkit-scrollbar{
+    display: none;
 }
 header .song-side nav .search .search_results .card{
+    width: 100% ;
+    min-height: 0px;
+    /* border: 1px solid #fff; */
+    background: rgb(184, 184, 184 , .1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    text-decoration: none;
+    display: none;
+}
+header .song-side nav .search .search_results .card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 5px;
+}
+header .song-side nav .search .search_results .card .content{
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid #fff; */
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+}
+header .song-side nav .search .search_results .card .content .subTitle{
 
+    font-size: 11px;
+    font-weight: 500;
+    color: #a4a8b4;
 }
 header .song-side nav .search .bi{
     font-size: 13px;
@@ -662,8 +695,109 @@ header .song-side .popular_artists .item li img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 
 
+/* Login style */
+header .left_bx1 , .right_bx1{
+    position: relative;
+    width: 65%;
+    height: 100%;
+    border: 1px solid #fff;
+    background: #0b1320;
+}
+header .left_bx1 {
+    width: 35%;
+    background: #fff;
+    box-shadow: 5px 0px 2px #090f1f;
+}
+header .left_bx1 .content{
+    width: 75%;
+    height: auto;
+    border: none;
+    padding: 25px 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 50px;
+}
+header .left_bx1 .content .card{
+    width: 100%;
+    /* align-self: center; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+header .left_bx1 .content .card label{
+    font-size: 14px;
+}
+header .left_bx1 .content .card input{
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px sloid rgb(154, 154, 154 , .1);
+    background: rgb(238, 238, 238 , .1);
+    margin-left: 10px;
+    border-radius: 10px;
+}
+header .left_bx1 .content  .submit{
+    margin-top: 30px;
+    padding: 0px 20px;
+    color: #fff;
+    background: #111727;
+    width: 100%;
+    cursor: pointer;                     
+}
+header .left_bx1 .content  .check{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;                  
+}
+header .left_bx1 .content  .check input{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    /* margin-top: 10px;                   */
+}
+header .left_bx1 .content  .check span{
+   margin-left: 5px;                
+   font-size: 13px;
+   margin-bottom: 40px;
+}
+header .left_bx1 .content  p{
+    position: absolute;
+    /* bottom: 160px; */
+    margin-top: 57px;
+    text-align: center;
+    font: 10px;
+}
+header .left_bx1 .content  p a{
+    text-decoration: none;
+    color: #5adae0;
+    font-weight: bold;
+    font-size: 10px;                                                             
+}
+
+header .right_bx1 img{
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+header .right_bx1 h3{
+    position: absolute;
+     background: #5adae0;
+     color: #000;  
+     right: 0;
+     bottom:20px;
+     padding: 3px 10px;
+     border-radius: 5px 0px 0px 5px ;
+     font-size: 13px;
+}
 
